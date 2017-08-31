@@ -35,11 +35,9 @@ public class HomeCrecimientoFragment extends Fragment {
     float registro[][];
     int almacenar=0;
     ArrayList valores = new ArrayList();
-    String mensaje;
-    String re, nume;
+    String re;
     Button agregar;
     View view;
-
 
     public HomeCrecimientoFragment() {
         // Required empty public constructorz
@@ -192,23 +190,31 @@ public void vistas(View view){
                     crePeso1=0;
                     creLon1=0;
                 }
+
                 crePeso=SPeso-crePeso1;
                 creLon=SLongitud-creLon1;
 
-                float CRP=(crePeso/crePeso1)*100;
-                float CRL=(creLon/creLon1)*100;
+                float CRP = (crePeso / crePeso1);
+                float CRL = (creLon / creLon1);
 
-                AdminBD db = new AdminBD(getContext(), "AcuaCultura", null, 1);
-                db.AltaCreTrucha(SPeso, SLongitud, crePeso, creLon, (int)CRP, (int) CRL);
+                int CRP1 = (int) (CRP * 100);
+                int CRL1 = (int) (CRL * 100);
                 almacenar = 1;
-                Toast.makeText(getContext(), "Guardando...", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getContext(), CRP + "..." + CRL, Toast.LENGTH_SHORT).show();
+                /*AdminBD db = new AdminBD(getContext(), "AcuaCultura", null, 1);
+                db.AltaCreTrucha(SPeso, SLongitud, crePeso, creLon, (int)CRP, (int) CRL);
+
+                Toast.makeText(getContext(), "Guardando...", Toast.LENGTH_SHORT).show();*/
+
 
                 valores.add(SPeso);
                 valores.add(SLongitud);
                 valores.add(crePeso);
-                valores.add(CRP);
                 valores.add(creLon);
-                valores.add(CRL);
+                valores.add(CRP1);
+                valores.add(CRL1);
+
 
                 Intent intent = new Intent(getContext(), TasaAlimentacionActivity.class);
                 intent.putStringArrayListExtra("valor", valores);
@@ -263,20 +269,23 @@ public void vistas(View view){
                 crePeso=SPeso-crePeso1;
                 creLon=SLongitud-creLon1;
 
-                float CRP=(crePeso/crePeso1)*100;
-                float CRL=(creLon/creLon1)*100;
+                float CRP = (crePeso / crePeso1);
+                float CRL = (creLon / creLon1);
 
-                AdminBD db = new AdminBD(getContext(), "AcuaCultura", null, 1);
-                db.AltaCreTilapia(SPeso, SLongitud, crePeso, creLon, (int)CRP, (int)CRL);
+                int CRP1 = (int) (CRP * 100);
+                int CRL1 = (int) (CRL * 100);
                 almacenar = 1;
-                Toast.makeText(getContext(), "Guardando...", Toast.LENGTH_SHORT).show();
+                /*AdminBD db = new AdminBD(getContext(), "AcuaCultura", null, 1);
+                db.AltaCreTilapia(SPeso, SLongitud, crePeso, creLon, (int)CRP, (int)CRL);
+
+                Toast.makeText(getContext(), "Guardando...", Toast.LENGTH_SHORT).show();*/
 
                 valores.add(SPeso);
                 valores.add(SLongitud);
                 valores.add(crePeso);
-                valores.add(CRP);
                 valores.add(creLon);
-                valores.add(CRL);
+                valores.add(CRP1);
+                valores.add(CRL1);
 
                 Intent intent = new Intent(getActivity(), TasaAlimentacionActivity.class);
                 intent.putStringArrayListExtra("valor", valores);
@@ -284,7 +293,6 @@ public void vistas(View view){
                 intent.putExtra("num",String.valueOf(numRegistros));
                 startActivity(intent);
             }
-
         }
     }
 
@@ -295,9 +303,9 @@ public void vistas(View view){
         } else {
             tilPeso.setError(null);
         }
-
         return true;
     }
+
     private boolean esLongitud(String longitud) {
         if (longitud.matches("")) {
             tilLongitud.setError("Campo Vacio");
@@ -310,5 +318,3 @@ public void vistas(View view){
     }
 
 }
-
-

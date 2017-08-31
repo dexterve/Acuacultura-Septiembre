@@ -1,5 +1,6 @@
 package itvo.acuacultura;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -11,15 +12,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import itvo.acuacultura.View.DialogoListaMenu;
+import itvo.acuacultura.View.Otro.Fragments.AcercaFragment;
+import itvo.acuacultura.View.Otro.Fragments.ContactoFragment;
+import itvo.acuacultura.View.Otro.Fragments.DialogoListaMenu;
+import itvo.acuacultura.View.Otro.Fragments.MainFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
+    String sel = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sel = getIntent().getStringExtra("inicio");
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -32,6 +40,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         getSupportActionBar().setTitle("Inicio");
+
+        try {
+            switch (sel) {
+                case "inicio":
+                    //Toast.makeText(this, sel, Toast.LENGTH_LONG).show();
+                    MainFragment mainFragment = new MainFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.rlMain, mainFragment)
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                            .addToBackStack(null).commit();
+                    break;
+            }
+
+        } catch (Exception e) {
+            AcercaFragment acercaFragment = new AcercaFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.rlMain, acercaFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .addToBackStack(null).commit();
+        }
+
 
         // showToolbar(getResources().getString(R.string.toolbar_title),false);
     }
@@ -79,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }*/
 
+
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
         String re = "";
@@ -86,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (id) {
             case R.id.Inicio:
                 Intent searchIntent = new Intent(this, MainActivity.class);
+                searchIntent.putExtra("inicio", "inicio");
                 startActivity(searchIntent);
                 overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
                 break;
@@ -103,10 +132,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 lista.show(getSupportFragmentManager(), "Lista");
                 overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
                 break;
+            case R.id.acerca:
+                AcercaFragment acercaFragment = new AcercaFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.rlMain, acercaFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .addToBackStack(null).commit();
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+                break;
+            case R.id.contacto:
+                ContactoFragment contactoFragment = new ContactoFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.rlMain, contactoFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .addToBackStack(null).commit();
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+                break;
         }
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
             return true;
-
     }
 }

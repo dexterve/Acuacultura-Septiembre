@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="250dp"
-    android:gravity="bottom"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:background="@color/colorPrimary"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:weightSum="1">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/columnaris"
+        android:layout_width="wrap_content"
+        android:layout_height="174dp"
+        android:layout_weight="0.88"
         android:scaleType="centerCrop"
-        android:layout_weight="0.91" />
+        android:src="@drawable/itvo_foto" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heihDivider"
+        android:background="@android:color/white">
+
+    </View>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Menu"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:layout_marginLeft="15dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:paddingTop="10dp"
+        android:text="Menu Principal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

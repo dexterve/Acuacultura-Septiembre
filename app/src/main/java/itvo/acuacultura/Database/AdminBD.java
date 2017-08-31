@@ -24,12 +24,12 @@ public class AdminBD extends SQLiteOpenHelper {
     String sqlCrecimientoTilapia = "CREATE TABLE CrecimientoTilapia " +
             "(ID integer primary key autoincrement, Fecha TEXT, " +
             "Peso FLOAT, Longitud FLOAT, PesoAumentado Float, LongitudAumentada Float, " +
-            "PorcentajePeso Float, PorcentajeLongitud Float);";
+            "PorcentajePeso Integer, PorcentajeLongitud Integer, TasaAlimentacion Float, AlimentoUsado Float);";
 
     String sqlCrecimientoTrucha = "CREATE TABLE CrecimientoTrucha " +
             "(ID integer primary key autoincrement, Fecha TEXT, " +
             "Peso Float, Longitud Float, PesoAumentado Float, LongitudAumentada Float, " +
-            "PorcentajePeso Float, PorcentajeLongitud Float);";
+            "PorcentajePeso Integer, PorcentajeLongitud Integer, TasaAlimentacion Float,  AlimentoUsado Float);";
 
     public AdminBD(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -80,7 +80,7 @@ public class AdminBD extends SQLiteOpenHelper {
         bd.insert("RegistroTilapia", null, registro);
     }
 
-    public void AltaCreTilapia(float peso, float longitud, float pesoAu, float lonAu, int porPes, int porLon){
+    public void AltaCreTilapia(float peso, float longitud, float pesoAu, float lonAu, int porPes, int porLon, float tasa, float AUsado) {
         SQLiteDatabase bd = this.getWritableDatabase();
         ContentValues registro = new ContentValues();
 
@@ -95,9 +95,12 @@ public class AdminBD extends SQLiteOpenHelper {
         registro.put("LongitudAumentada", lonAu);
         registro.put("PorcentajePeso", porPes);
         registro.put("PorcentajeLongitud", porLon);
+        registro.put("TasaAlimentacion", tasa);
+        registro.put("AlimentoUsado", AUsado);
         bd.insert("CrecimientoTilapia", null, registro);
     }
-    public void AltaCreTrucha(float peso, float longitud, float pesoAu, float lonAu, int porPes, int porLon){
+
+    public void AltaCreTrucha(float peso, float longitud, float pesoAu, float lonAu, int porPes, int porLon, float tasa, float AUsado) {
         SQLiteDatabase bd = this.getWritableDatabase();
         ContentValues registro = new ContentValues();
 
@@ -112,6 +115,8 @@ public class AdminBD extends SQLiteOpenHelper {
         registro.put("LongitudAumentada", lonAu);
         registro.put("PorcentajePeso", porPes);
         registro.put("PorcentajeLongitud", porLon);
+        registro.put("TasaAlimentacion", tasa);
+        registro.put("AlimentoUsado", AUsado);
         bd.insert("CrecimientoTrucha", null, registro);
     }
 
@@ -185,6 +190,7 @@ public class AdminBD extends SQLiteOpenHelper {
         }
         return datos;
     }
+
     public ArrayList GraficaLongitudTilapia() {
 
         ArrayList datos = new ArrayList();
@@ -427,6 +433,110 @@ public class AdminBD extends SQLiteOpenHelper {
         int resultado = bd.delete("CrecimientoTrucha","ID = '"+n+"'", null);
         bd.close();
         return resultado;
+    }
+
+
+    public ArrayList GraficaCA(String Seleccion, String re) {
+
+        ArrayList datos = new ArrayList();
+        Cursor cursor;
+        SQLiteDatabase bd = this.getReadableDatabase();
+
+        switch (re) {
+            case "Trucha":
+                cursor = bd.rawQuery("Select * from RegistroTrucha", null);
+                switch (Seleccion) {
+                    case "Temperatura":
+                        if (cursor != null) {
+                            if (cursor.moveToFirst()) {
+                                do {
+                                    float peso = cursor.getFloat(cursor.getColumnIndex("Temperatura"));
+                                    datos.add(peso);
+                                } while (cursor.moveToNext());
+                            }
+                        }
+                        break;
+                    case "Oxigeno":
+                        if (cursor != null) {
+                            if (cursor.moveToFirst()) {
+                                do {
+                                    float peso = cursor.getFloat(cursor.getColumnIndex("Oxigeno"));
+                                    datos.add(peso);
+                                } while (cursor.moveToNext());
+                            }
+                        }
+                        break;
+                    case "PH":
+                        if (cursor != null) {
+                            if (cursor.moveToFirst()) {
+                                do {
+                                    float peso = cursor.getFloat(cursor.getColumnIndex("PH"));
+                                    datos.add(peso);
+                                } while (cursor.moveToNext());
+                            }
+                        }
+                        break;
+                    case "Turbidez":
+                        if (cursor != null) {
+                            if (cursor.moveToFirst()) {
+                                do {
+                                    float peso = cursor.getFloat(cursor.getColumnIndex("Turbidez"));
+                                    datos.add(peso);
+                                } while (cursor.moveToNext());
+                            }
+                        }
+                        break;
+                }
+
+                break;
+            case "Tilapia":
+                cursor = bd.rawQuery("Select * from RegistroTilapia", null);
+                switch (Seleccion) {
+                    case "Temperatura":
+                        if (cursor != null) {
+                            if (cursor.moveToFirst()) {
+                                do {
+                                    float peso = cursor.getFloat(cursor.getColumnIndex("Temperatura"));
+                                    datos.add(peso);
+                                } while (cursor.moveToNext());
+                            }
+                        }
+                        break;
+                    case "Oxigeno":
+                        if (cursor != null) {
+                            if (cursor.moveToFirst()) {
+                                do {
+                                    float peso = cursor.getFloat(cursor.getColumnIndex("Oxigeno"));
+                                    datos.add(peso);
+                                } while (cursor.moveToNext());
+                            }
+                        }
+                        break;
+                    case "PH":
+                        if (cursor != null) {
+                            if (cursor.moveToFirst()) {
+                                do {
+                                    float peso = cursor.getFloat(cursor.getColumnIndex("PH"));
+                                    datos.add(peso);
+                                } while (cursor.moveToNext());
+                            }
+                        }
+                        break;
+                    case "Turbidez":
+                        if (cursor != null) {
+                            if (cursor.moveToFirst()) {
+                                do {
+                                    float peso = cursor.getFloat(cursor.getColumnIndex("Turbidez"));
+                                    datos.add(peso);
+                                } while (cursor.moveToNext());
+                            }
+                        }
+                        break;
+                }
+                break;
+        }
+
+        return datos;
     }
 
 

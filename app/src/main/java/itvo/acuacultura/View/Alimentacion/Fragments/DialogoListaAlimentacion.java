@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 
-import itvo.acuacultura.R;
 import itvo.acuacultura.View.Alimentacion.AlimentacionActivity;
 
 
@@ -21,7 +20,7 @@ public class DialogoListaAlimentacion extends DialogFragment {
             m [i-1]= String.valueOf(i);
         }
 
-      AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(),R.style.miestilo);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle("Ingresé el Numero \nde Mezclas")
                 .setItems(m, new DialogInterface.OnClickListener() {

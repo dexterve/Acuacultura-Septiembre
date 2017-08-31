@@ -1,10 +1,55 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
     tools:context="itvo.acuacultura.View.Crecimiento.Fragments.AyudaCrecimientoFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ayuda para el calculo del Crecimiento de los Peces"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="20dp"
+                android:text="• Se pueden seleccionar entre 20 y 30 ejemplares\n
+\n• El usuario deberá introducir la longitud (cm) y peso(g) de cada ejemplar hasta llegar al número seleccionado anteriormente (debe verificar cada número ya que no podrá editarse más adelante) \n
+\n• Al terminar la inserción de datos será redireccionado a una ventana donde se mostrara la información del crecimiento, así como un campo donde se pedirá el número de organismos para posteriormente calcular los kilogramos de alimento necesarios por día\n
+\n• En la sección de registros se mostrarán los promedios y el aumento en tamaño y peso de los peces (Si se cometió algún error en la inserción se pueden borrar los registros) \n
+\n• En la Sección de grafica se mostrará gráficamente el crecimiento de los peces en cuanto a longitud y peso se refiere"
+                android:textColor="@android:color/black"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="15dp"
+                app:srcCompat="@drawable/signo" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </FrameLayout>

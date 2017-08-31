@@ -5,12 +5,12 @@ package itvo.acuacultura.Model;
  */
 
 public class TextosEnfermedades {
+    private String DescripcionAtaqueBacteriano, causasAtaqueBacteriano, signosAtaqueBacteriano, tratamientoAtaqueBacteriano, prevencionAtaqueBacteriano;
+    private String DescripcionPuntoBlanco, causasPuntoBlanco, signosPuntoBlanco, tratamientoPuntoBlanco, prevencionPuntoBlanco;
+    private String DescripcionSaprolegnia, causasSaprolegnia, signosSaprolegnia, tratamientoSaprolegnia, prevencionSaprolegnia;
+    private String DescripcionFurunculosis, causasFurunculosis, signosFurunculosis, tratamientoFurunculosis, prevencionFurunculosis;
     private String DescripcionColumnaris, CausasColumnaris, signosColumnaris, tratamientoColumnaris, prevencionColumnaris;
-    String DescripcionVibriosis, causasVibriosis, signosVibriosis, tratamientoVibriosis, prevencionVibriosis;
-    String DescripcionAtaqueBacteriano, causasAtaqueBacteriano, signosAtaqueBacteriano, tratamientoAtaqueBacteriano, prevencionAtaqueBacteriano;
-    String DescripcionPuntoBlanco, causasPuntoBlanco, signosPuntoBlanco, tratamientoPuntoBlanco, prevencionPuntoBlanco;
-    String DescripcionSaprolegnia, causasSaprolegnia, signosSaprolegnia, tratamientoSaprolegnia, prevencionSaprolegnia;
-    String DescripcionFurunculosis, causasFurunculosis, signosFurunculosis, tratamientoFurunculosis, prevencionFurunculosis;
+    private String DescripcionVibriosis, causasVibriosis, signosVibriosis, tratamientoVibriosis, prevencionVibriosis;
 
     public String getDescripcionColumnaris() {
         DescripcionColumnaris="Es un síntoma de la enfermedad en los peces que resulta de una infección causada por el Gram-negativa, aerobia, en forma de barra bacteria Flavobacterium columnare. Se conocía anteriormente como Bacillus columnaris, columnaris Chondrococcus, columnaris Cytophaga y columnaris Flexibacter. Las bacterias son ubicuos en agua dulce, y los peces cultivados criados en estanques o canales de conducción son la principal preocupación con enfermedad más prevalente en la temperatura del aire por encima de 12-14 ° C. A menudo se confunde con una infección por hongos. La enfermedad es muy contagiosa y el resultado es a menudo fatal. No es zoonótica.";
@@ -34,6 +34,8 @@ public class TextosEnfermedades {
     }
 
     public String getPrevencionColumnaris() {
+        prevencionColumnaris = "Un tipo de arcilla usada en cosméticos, medicina y fabricación de papel puede ser lo que los productores acuícolas necesitan para combatir la columnaris, una enfermedad bacteriana costosa y mortal que afecta a los peces de agua dulce en todo el mundo.\n" +
+                "Los científicos del Agricultural Research Service (ARS) han descubierto que agregar esta arcilla, denominada “kaolin” (caolín), al agua mejorar significativamente la tasa de supervivencia del bagre del canal con la enfermedad columnaris, que es causada por el patógeno bacteriano Flavobacterium columnare. La columnaris afecta a muchas especies de peces de cultivo, pero pocos métodos preventivos o terapias están disponibles para tratar la enfermedad, dijo Benjamin Beck, fisiólogo de peces en el Harry K. Dupree Suttgart National Aquaculture Research Center (ARC).";
         return prevencionColumnaris;
     }
 
@@ -43,6 +45,7 @@ public class TextosEnfermedades {
     }
 
     public String getCausasVibriosis() {
+        causasVibriosis = "El ingreso de los vibrios al organismo se da cuando se supera la primera barrera de defensa que es el exoesqueleto. Esto puede suceder a través de heridas (soluciones de continuidad), poros o perforaciones producidas por bacterias quitinolíticas";
         return causasVibriosis;
     }
 
@@ -68,19 +71,45 @@ public class TextosEnfermedades {
     }
 
     public String getCausasAtaqueBacteriano() {
+        causasAtaqueBacteriano = "Ésta es la enfermedad bacteriana más común en peces de agua dulce, pudiendo ser potencialmente afectadas todas las especies. A. hydrophila es una bacteria ubicua en el medioambiente y puede aislarse a partir de peces clínicamente sanos. La aparición de la enfermedad está asociada a situaciones estresantes como el hacinamiento, altas temperaturas, elevadas cantidades de materia orgánica o reducción en los niveles de oxígeno.";
         return causasAtaqueBacteriano;
     }
 
     public String getSignosAtaqueBacteriano() {
+        signosAtaqueBacteriano = "Se produce en la afección con dos síntomas diferentes, una denominada maculosa con manchas cutáneas rojas con diferentes formas y tamaño y la otra ascítica más grave con lesiones, perdida de tejido. Los portadores sanos desde luego no presentan síntomas clínicos pero transmite la enfermedad.\n" +
+                "La forma ulcerosa: Se observan máculas (motas) y úlceras en la piel. La forma ascítica. Exoftalmia, notable hinchazón del vientre, ano inflamado y prolapso del mismo, descamación y aletas enrojecidas, congestionadas. Cavidad visceral con líquido gelatinoso, sanguinolento, ocasionalmente maloliente, hígado pálido amarillo con manchas blanquecinas característico e hiperemias. Riñón inflamado de consistencia pastosa. Bazo hipertrofiado, hemorrágico La forma con ulceras y necrosis. Hígado hiperemico, hemorragia generalizada\n" +
+                "La observación de manchas rojas en la piel, enrojecimiento y ulceras.\n";
         return signosAtaqueBacteriano;
     }
 
     public String getTratamientoAtaqueBacteriano() {
-        tratamientoAtaqueBacteriano="";
+        tratamientoAtaqueBacteriano = "A- Fármaco: Melafix (1% Aceite Melaleuca, 0,1% Limón, 98,9% Agua Osmosis)\n" +
+                "\n" +
+                "B- Fármaco: Maracyn TWO (Minocin 100mg, Dayanamineral gotas)\n" +
+                "- Medicación:\n" +
+                "- 1º día\n" +
+                "- 2 comp. Minocin / 40L\n" +
+                "- 4 gotas Dayanamineral / 40L\n" +
+                "- Melafix 1 cucharada sopera / 200L\n" +
+                "- del 2º día al 5º día:\n" +
+                "- 1 comp. Minocin / 40L\n" +
+                "- 4 gotas Dayanamineral / 40L\n" +
+                "- Melafix 1 charada sopera / 200L\n" +
+                "- 6º dia, Descanso\n" +
+                "- 7º día fin tratamiento\n" +
+                "- 8º día, Cambio del 80% de agua";
         return tratamientoAtaqueBacteriano;
     }
 
     public String getPrevencionAtaqueBacteriano() {
+        prevencionAtaqueBacteriano = "Antes de realizar cualquier otra operación, hay que controlar los valores de pH, dureza, amoniacos, nitritos y vigilar la temperatura del agua.\n" +
+                "\n" +
+                "Administrar a los peces una dieta variada es uno de los pilares para prevenir muchas enfermedades.\n" +
+                "Efectuar regularmente cambios de agua teniendo en cuenta que cambiar el agua no es lo mismo que rellenar el agua evaporada.\n" +
+                "Limpieza regular del filtro sin olvidar dejar siempre partes del filtro viejas. No hay que cambiar todas las materias filtrantes, sino que lo más aconsejable es cambiar la mitad y, al próximo cambio, la otra mitad.\n" +
+                "Eliminar las partes muertas de las plantas, los restos de comida y, por supuesto, algún pez muerto, en el caso de que lo haya. Si poseemos un acuario enfermería, debemos sacar del principal cualquier animal que denote algún síntoma sospechoso. Una buena medida es no dejar morir al pez dentro del acuario: cuando veamos que está mal y que no podamos salvarlo, es mejor sacarlo y ponerlo en un acuario pequeño aparte.\n" +
+                "Es imprescindible sifonear el fondo del acuario dos o tres veces al año. No hay que hacer toda la superficie de golpe, sino que primero se realizará una primera mitad y la otra mitad, pasados unos quince días. De esta forma la colonia bacteriana habrá tenido tiempo de restablecerse.\n" +
+                "Es preciso asegurarse de que los objetos que entran en contacto con el agua del acuario están limpios y, si se utilizan en distintos acuarios, no debemos olvidar desinfectarlos.";
         return prevencionAtaqueBacteriano;
     }
 
@@ -132,14 +161,18 @@ public class TextosEnfermedades {
     }
 
     public String getDescripcionSaprolegnia() {
+        DescripcionSaprolegnia = "Es el más importante de los agentes fúngicos que ataca a los peces de agua dulce, normalmente actúa como un patógeno secundario de los peces enfermos o que estén inmunodeprimidos por la presencia de otras afecciones o por desnutrición.";
         return DescripcionSaprolegnia;
     }
 
     public String getCausasSaprolegnia() {
+        causasSaprolegnia = "Los factores que determinan la aparición y el mantenimiento de alta carga fúngica en el agua son: La presencia de una gran cantidad de materia orgánica en el agua, densidades altas de peces, animales muertos o huevos de peces en descomposición. Además a temperaturas bajas suele ser más frecuente su aparición, debido a que la capacidad de respuestas inmunológica de los peces a las infecciones es disminuida. Las infecciones de frezas (huevos de peces) en periodo de incubación son muy frecuentes invadiendo los huevos muertos y extendiéndose hasta asfixiar y matar a los huevos adyacentes.";
         return causasSaprolegnia;
     }
 
     public String getSignosSaprolegnia() {
+        signosSaprolegnia = "Presenta síntomas externos visibles, sean placas o copos algodonosos de hongos. El pez infectado se aparta y nada aislado por los rincones del estanque o cerca de la superficie respirando lentamente, se frota contra sustratos duros. Su apetito está muy disminuido. Esta enfermedad puede invadir cualquier pequeña herida en los peces y ocurren con facilidad después de la manipulación en trabajos de rutina. También en algunas ocasiones se observan laceraciones y desgarramiento de aletas, infectan las zonas ulceradas producidas por la presencia de otras enfermedades como la furunculosis (lesiones cutáneas causadas por bacterias).\n" +
+                "Se realiza por medio de la observación directa del hongo en la superficie corporal o por raspados de la piel y con lupas o microscopios.\n";
         return signosSaprolegnia;
     }
 
@@ -153,14 +186,20 @@ public class TextosEnfermedades {
     }
 
     public String getPrevencionSaprolegnia() {
+        prevencionSaprolegnia = "";
         return prevencionSaprolegnia;
     }
 
     public String getDescripcionFurunculosis() {
+        DescripcionFurunculosis = "Es una enfermedad bacteriana producida por el Aeromonassalmonicida. Este organismo tiene forma de \"bastoncillo\" y un tamaño de 1x1,5 micras; aprovecha la corriente sanguínea para infectar al individuo. Parece ser que la bacteria no es capaz de vivir mucho tiempo fuera del pez. La transmisión entre los ejemplares se produce por \"contacto\" entre ellos y también por la abertura de los forúnculos que \"vierten\" las bacterias al agua. Si la enfermedad avanza perderemos muchos de nuestros peces.\n" +
+                "Afecta tanto a peces de agua dulce como salada, aunque tiene mayor incidencia en los primeros. Esta enfermedad a menudo se presenta junto a otras como la Eritrodermatitis. Es muchas veces ";
         return DescripcionFurunculosis;
     }
 
     public String getCausasFurunculosis() {
+        causasFurunculosis = "•\tMalas condiciones higiénicas del acuario.\n" +
+                "•\tPoco oxígeno y superpoblación\n" +
+                "•\tCambios bruscos de temperatura.\n";
         return causasFurunculosis;
     }
 
@@ -173,10 +212,14 @@ public class TextosEnfermedades {
     }
 
     public String getTratamientoFurunculosis() {
+        tratamientoFurunculosis = "•\tLo deseable sería tratar al ejemplar en un acuario enfermería aislándolo del resto por la virulencia de la enfermedad. Hay autores que recomienda desinfectar las urnas con permanganato potásico.\n" +
+                "•\tMejorar la calidad del agua.\n" +
+                "•\tAdministración de antibióticos en las dosis marcadas por el fabricante. Por ejemplo \"Furanace\", que es un potente antibacteriano, en baños en el acuario enfermería de 5-10 minutos, 1 gr por cada 50 litros durante 5 días.\n";
         return tratamientoFurunculosis;
     }
 
     public String getPrevencionFurunculosis() {
+        prevencionFurunculosis = "";
         return prevencionFurunculosis;
     }
 }

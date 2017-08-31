@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Principal">
-
         <item
             android:id="@+id/Inicio"
             android:icon="@drawable/home"
             android:title="Inicio"
             />
-
         <item
             android:id="@+id/Tilapia"
-            android:icon="@drawable/ic_photo_library_black_24dp"
+            android:icon="@drawable/pez"
             android:title="Tilapia"
             />
         <item
             android:id="@+id/Trucha"
-            android:icon="@drawable/ic_photo_camera_black_24dp"
+            android:icon="@drawable/pez"
             android:title="Trucha" />
 
         <item
@@ -26,7 +23,7 @@
             android:title="Acerca de..." />
     </item>
 
-    <item android:title="Comunicacion">
+    <item android:title="">
         <menu>
             <item
                 android:id="@+id/share"
@@ -36,10 +33,6 @@
                 android:id="@+id/contacto"
                 android:icon="@drawable/call"
                 android:title="Contacto" />
-
-
         </menu>
     </item>
-
-
 </menu>

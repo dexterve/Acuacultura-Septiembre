@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|center"
+    android:orientation="vertical"
+    tools:context="itvo.acuacultura.View.Otro.Fragments.AcercaFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:text="Proyecto realizado para el cumplimiento del servicio social en el Instituto Tecnologico del Valle de Oaxaca"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/itvo" />
+
+</LinearLayout>

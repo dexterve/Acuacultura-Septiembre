@@ -20,11 +20,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import itvo.acuacultura.Database.AdminBD;
 import itvo.acuacultura.R;
 
 public class TasaAlimentacionActivity extends AppCompatActivity {
 
-    private Spinner spinner1;
     ArrayList porcentaje= new ArrayList();
     String porcentajeAlimentacion[][]= new String[2][10];
     String SeleccionSpinner1="", re="", num;
@@ -33,6 +33,7 @@ public class TasaAlimentacionActivity extends AppCompatActivity {
     ArrayList valores = new ArrayList();
     Button calcular;
     TextInputLayout tilNumOrg;
+    private Spinner spinner1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class TasaAlimentacionActivity extends AppCompatActivity {
 
         re = getIntent().getStringExtra("re");
         num = getIntent().getStringExtra("num");
-        Toast.makeText(this, num+re, Toast.LENGTH_LONG).show();
+        // Toast.makeText(this, num+re, Toast.LENGTH_LONG).show();
 
         resultado = (TextView) findViewById(R.id.lblResultado);
         spinner1 = (Spinner) findViewById(R.id.spinner);
@@ -57,7 +58,7 @@ public class TasaAlimentacionActivity extends AppCompatActivity {
 
         datos.setText("Promedios"+"\nPeso Promedio: "+valores.get(0)+"\nLongitud Promedio: "+valores.get(1));
         medidas.setText("Crecimiento"+"\nCrecimiento en Peso: "+valores.get(2)+"\nLongitud de Crecimiento: "+valores.get(3));
-        por.setText("Porcentajes de crecimiento"+"\nPorcentaje de Peso: "+valores.get(4)+"\nPorcentaje de longitud: "+valores.get(5));
+        por.setText("Porcentajes de crecimiento" + "\nPorcentaje de Peso: " + valores.get(4) + "%" + "\nPorcentaje de longitud: " + valores.get(5) + "%");
         //Toast.makeText(this,c,Toast.LENGTH_SHORT).show();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(TasaAlimentacionActivity.this, android.R.layout.simple_list_item_1, porcentaje);
@@ -112,12 +113,25 @@ public class TasaAlimentacionActivity extends AppCompatActivity {
                             break;
                         }
                     }
-
                     resul=prom*org*sele;
-                    resultado.setText("Cantidad de alimento por dia: "+resul+" gramos");
+                    resul = resul / 1000;
+                    resultado.setText("Cantidad de Alimento por dia: " + resul + " Kilogramos");
 
+                    AdminBD db = new AdminBD(getApplicationContext(), "AcuaCultura", null, 1);
+
+                    switch (re) {
+                        case "Tilapia":
+                            db.AltaCreTilapia((float) valores.get(0), (float) valores.get(1), (float) valores.get(2),
+                                    (float) valores.get(3), (int) valores.get(4), (int) valores.get(5), resul, 0);
+                            Toast.makeText(getApplicationContext(), "Guardando...", Toast.LENGTH_SHORT).show();
+                            break;
+                        case "Trucha":
+                            db.AltaCreTrucha((float) valores.get(0), (float) valores.get(1), (float) valores.get(2),
+                                    (float) valores.get(3), (int) valores.get(4), (int) valores.get(5), resul, 0);
+                            Toast.makeText(getApplicationContext(), "Guardando...", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                 }
-
             }
         });
 

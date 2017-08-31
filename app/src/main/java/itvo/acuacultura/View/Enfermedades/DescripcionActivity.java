@@ -22,7 +22,7 @@ import itvo.acuacultura.R;
 public class DescripcionActivity extends AppCompatActivity {
     //@BindView(R.id.titleEnfermedad)
     ImageView enfermedad;
-    TextView descripcion, causas, tratamiento, signos, prevencion, title;
+    TextView descripcion, causas, tratamiento, signos, prevencion, title, preve;
     String re, nom;
     TextosEnfermedades objTexto;
     Object obj;
@@ -41,6 +41,7 @@ public class DescripcionActivity extends AppCompatActivity {
         tratamiento  = (TextView)findViewById(R.id.lblTratamiento);
         signos       = (TextView)findViewById(R.id.lblSignos);
         prevencion   = (TextView)findViewById(R.id.lblPrevencion);
+        preve = (TextView) findViewById(R.id.Prevencion);
 
         objTexto= new TextosEnfermedades();
         nom=getIntent().getStringExtra("nom");
@@ -92,6 +93,7 @@ public class DescripcionActivity extends AppCompatActivity {
                         signos.setText(objTexto.getSignosVibriosis());
                         prevencion.setText(objTexto.getPrevencionVibriosis());
                         tratamiento.setText(objTexto.getTratamientoVibriosis());
+                        preve.setText("");
                         break;
                     case "Ataque Bacteriano Aeromonas":
                         descripcion.setText(objTexto.getDescripcionAtaqueBacteriano());
@@ -106,6 +108,7 @@ public class DescripcionActivity extends AppCompatActivity {
                         signos.setText(objTexto.getSignosSaprolegnia());
                         prevencion.setText(objTexto.getPrevencionSaprolegnia());
                         tratamiento.setText(objTexto.getTratamientoSaprolegnia());
+                        preve.setText("");
                         break;
                     case "Furunculosis":
                         descripcion.setText(objTexto.getDescripcionFurunculosis());
@@ -113,6 +116,7 @@ public class DescripcionActivity extends AppCompatActivity {
                         signos.setText(objTexto.getSignosFurunculosis());
                         prevencion.setText(objTexto.getPrevencionFurunculosis());
                         tratamiento.setText(objTexto.getTratamientoFurunculosis());
+                        preve.setText("");
                         break;
                 }
 
@@ -139,6 +143,7 @@ public class DescripcionActivity extends AppCompatActivity {
                         signos.setText(objTexto.getSignosVibriosis());
                         prevencion.setText(objTexto.getPrevencionVibriosis());
                         tratamiento.setText(objTexto.getTratamientoVibriosis());
+                        preve.setText("");
                         break;
                     case "Ataque Bacteriano Aeromonas":
                         descripcion.setText(objTexto.getDescripcionAtaqueBacteriano());
@@ -153,6 +158,7 @@ public class DescripcionActivity extends AppCompatActivity {
                         signos.setText(objTexto.getSignosSaprolegnia());
                         prevencion.setText(objTexto.getPrevencionSaprolegnia());
                         tratamiento.setText(objTexto.getTratamientoSaprolegnia());
+                        preve.setText("");
                         break;
                     case "Furunculosis":
                         descripcion.setText(objTexto.getDescripcionFurunculosis());
@@ -160,6 +166,7 @@ public class DescripcionActivity extends AppCompatActivity {
                         signos.setText(objTexto.getSignosFurunculosis());
                         prevencion.setText(objTexto.getPrevencionFurunculosis());
                         tratamiento.setText(objTexto.getTratamientoFurunculosis());
+                        preve.setText("");
                         break;
                 }
                 break;

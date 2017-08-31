@@ -1,9 +1,55 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
     tools:context="itvo.acuacultura.View.Alimentacion.Fragments.AlimentacionAyudaFragment">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ayuda para el calculo de la Alimentacion"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="20dp"
+                android:text="•  Se pueden elegir hasta cinco mezclas para realizar el cálculo\n
+\n• Cada mezcla consta de dos insumos en los cuales hay doce diferentes ingredientes\n
+\n• Hay un campo para introducir el porcentaje de proteína cruda en el alimento, dependiendo del insumo elegido existen limitantes(en las advertencias mostradas en pantalla se observara el problema en caso de existir)\n
+\n• En caso de haber seleccionado dos o más mezclas se mostrara en pantalla un dialogo que indicara la introducción de la siguiente mezcla, acá se podrán elegir nuevos insumos así como un nuevo porcentaje de proteína cruda en el alimento\n
+\n• Terminados los cálculos será redireccionado a una nueva ventana donde se mostraran cuantos gramos son necesarios para cada mezcla y una gráfica donde aparecerá el porcentaje de cada mezcla"
+                android:textColor="@android:color/black"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="15dp"
+                app:srcCompat="@drawable/signo" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

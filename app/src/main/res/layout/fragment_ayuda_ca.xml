@@ -1,10 +1,55 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
     tools:context="itvo.acuacultura.View.CalidadDelAgua.Fragments.HelpCAFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ayuda para el calculo de la Calidad del Agua"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="20dp"
+                android:text="•  Para realizar el cálculo correctamente se deben rellenar los cuatro campos (Temperatura, PH, Oxigeno y Turbidez)\n
+\n• Si algún campo esta vacío o se introdujo un carácter invalido se mostrara una advertencia\n
+\n• Hay un campo para introducir el porcentaje de proteína cruda en el alimento, dependiendo del insumo elegido existen limitantes(en las advertencias mostradas en pantalla se observara el problema en caso de existir)\n
+\n• Si algún valor esta fuera del rango correcto, sonara una alarma de alerta\n
+\n• Abajo de cada campo se mostraran las recomendaciones\n
+\n• Hay una sección donde se guardarán los registros, se pueden eliminar cuando el usuario así lo solicite (debe tener en cuenta que estos registros no podrán recuperarse)"
+                android:textColor="@android:color/black"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="15dp"
+                app:srcCompat="@drawable/signo" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

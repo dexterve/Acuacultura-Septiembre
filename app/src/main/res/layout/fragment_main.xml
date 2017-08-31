@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="itvo.acuacultura.View.Otro.Fragments.MainFragment">
+
+
+    <!--LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/PaddingLayout"
+        android:weightSum="1">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/TituloMain"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/TituloSize"/>
+
+            <ImageButton
+                android:id="@+id/btnTilapia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tilapiaformat"
+                android:layout_centerInParent="true"
+                android:onClick="goToMenuTilapia"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"
+                android:textSize="@dimen/buttonName"
+                android:text="@string/Tilapia"
+                android:textColor="@android:color/black"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+            <ImageButton
+                android:id="@+id/btnTrucha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/truchafor"
+                android:layout_centerInParent="true"
+                android:onClick="goToMenuTrucha"
+                android:theme="@style/RaisedButtonDark"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"
+                android:textSize="@dimen/buttonName"
+                android:text="@string/Trucha"
+                android:textColor="@android:color/black"/>
+
+        </RelativeLayout>
+    </LinearLayout-->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="Tilapia"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="161dp"
+                android:layout_weight="0.39"
+                app:srcCompat="@drawable/tilapia_info" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="Tilapia es el nombre genérico con el que se denomina a un grupo de peces de origen africano, que consta de varias especies, algunas con interés económico, pertenecientes al género Oreochromis. Habitan mayoritariamente en regiones tropicales, en las que se dan las condiciones favorables para su reproducción y crecimiento. Entre sus especies más conocidas destacan la del Nilo (Oreochromis niloticus), la de Mozambique (Oreochromis mossambicus) y la azul (Oreochromis aureus)."
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:text="Trucha"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold|italic" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/trucha_info" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="Las truchas son peces de la subfamilia Salmoninae, dentro de la familia de los salmónidos; el nombre se usa específicamente para peces de tres géneros de dicha subfamilia: Salmo, que incluye las especies del Atlántico, Oncorhynchus, que incluye las especies del Pacífico, y Salvelinus.
+Las truchas se encuentran normalmente en aguas frías y limpias de ríos y lagos distribuidos a lo largo de Norteamérica, el norte de Asia y Europa.
+Las aletas de las truchas carecen de espinas, y todas las especies tienen una pequeña aleta adiposa en el lomo, cerca de la cola.
+"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

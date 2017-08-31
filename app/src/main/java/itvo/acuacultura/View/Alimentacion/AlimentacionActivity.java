@@ -21,7 +21,9 @@ import itvo.acuacultura.MainActivity;
 import itvo.acuacultura.R;
 import itvo.acuacultura.View.Alimentacion.Fragments.AlimentacionAyudaFragment;
 import itvo.acuacultura.View.Alimentacion.Fragments.AlimentacionFragment;
-import itvo.acuacultura.View.Enfermedades.EnfermedadesActivity;
+import itvo.acuacultura.View.Otro.Fragments.AcercaFragment;
+import itvo.acuacultura.View.Otro.Fragments.ContactoFragment;
+import itvo.acuacultura.View.Otro.Fragments.DialogoListaMenu;
 
 public class AlimentacionActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     String mensaje;
@@ -117,23 +119,44 @@ public class AlimentacionActivity extends AppCompatActivity implements Navigatio
 
     public boolean onNavigationItemSelected(MenuItem item){
         int id = item.getItemId();
-
-        if(id == R.id.Tilapia){
-            Intent searchIntent = new Intent(this, AlimentacionActivity.class);
-            String re="Tilapia";
-            searchIntent.putExtra("re",re);
-            startActivity(searchIntent);
-            overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
-        }else if(id == R.id.Trucha){
-            Intent searchIntent = new Intent(this, EnfermedadesActivity.class);
-            startActivity(searchIntent);
-            overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
-        }else if(id == R.id.Alimentacion){
-            Intent searchIntent = new Intent(this, AlimentacionActivity.class);
-            startActivity(searchIntent);
-            overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+        String re = "";
+        DialogoListaMenu lista;
+        switch (id) {
+            case R.id.Inicio:
+                Intent searchIntent = new Intent(this, MainActivity.class);
+                searchIntent.putExtra("inicio", "inicio");
+                startActivity(searchIntent);
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+                break;
+            case R.id.Tilapia:
+                re = "Tilapia";
+                lista = new DialogoListaMenu();
+                lista.Re(re);
+                lista.show(getSupportFragmentManager(), "Lista");
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+                break;
+            case R.id.Trucha:
+                re = "Trucha";
+                lista = new DialogoListaMenu();
+                lista.Re(re);
+                lista.show(getSupportFragmentManager(), "Lista");
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+                break;
+            case R.id.acerca:
+                AcercaFragment acercaFragment = new AcercaFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.rlMain, acercaFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .addToBackStack(null).commit();
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+                break;
+            case R.id.contacto:
+                ContactoFragment contactoFragment = new ContactoFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.rlMain, contactoFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .addToBackStack(null).commit();
+                overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
+                break;
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
